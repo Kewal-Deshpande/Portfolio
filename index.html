@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kewal Deshpande | Video Editor & Frontend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #e4e4e4;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 1px solid #222;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #58a6ff;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #aaaaaa;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: #1a1a1a;
+      padding: 15px;
+      border-bottom: 1px solid #222;
+    }
+
+    nav a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1f90ff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #ffffff;
+      border-left: 6px solid #58a6ff;
+      padding-left: 15px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .portfolio-item {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #2a2a2a;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .portfolio-item video,
+    .portfolio-item img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .portfolio-item h3 {
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+
+    .skills-list li {
+      background: #1f1f1f;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin: 8px 0;
+      list-style: none;
+      border-left: 4px solid #58a6ff;
+    }
+
+    .contact a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      color: #e4e4e4;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #58a6ff;
+    }
+
+    .about-section p {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #cccccc;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Kewal Deshpande.jpg" alt="Kewal Deshpande" class="profile-img">
+    <h1>Kewal Deshpande</h1>
+    <p>Video Editor | Motion Graphics Artist | Front End Web Developer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" class="about-section">
+    <h2 class="section-title">About Me</h2>
+    <p>Hello! I'm Kewal Deshpande, a passionate video editor currently pursuing my studies. I specialize in editing cinematic videos, short-form content, reels and dynamic motion graphics. I am skilled in tools like Adobe After Effects, Adobe Premiere Pro, CapCut, Alight Motion, Blender and more. I also have experience in frontend web development using HTML5 and CSS3. I'm always exploring new techniques and creative ways.</p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Previous Works</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <video src="Second Sample.mp4" controls></video>
+        <h3>News Channel Intro</h3>
+        <p>Edited promotional videos and highlight reels with creative transitions and sync effects.</p>
+      </div>
+      <div class="portfolio-item">
+        <video src="First Sample.mp4" controls></video>
+        <h3>Client 3D Reels</h3>
+        <p>Professional 3D reels for influencers, content creators, and short commercial edits.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills & Tools</h2>
+    <ul class="skills-list">
+      <li>Adobe After Effects</li>
+      <li>Adobe Premiere Pro</li>
+      <li>CapCut & Alight Motion</li>
+      <li>Blender for 3D & Motion Graphics</li>
+      <li>HTML5 & CSS3 (Responsive Design)</li>
+      <li>VFX and Motion Design</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p>Email: <a href="mailto:animating.kewal@gmail.com">animating.kewal@gmail.com</a></p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/kewal_deshpande?igsh=MWE3cDlnM3dnYzht" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/kewal-deshpande-6a9128292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:animating.kewal@gmail.com" target="_blank" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Kewal Deshpande. All rights reserved.
+  </footer>
+</body>
+</html>
