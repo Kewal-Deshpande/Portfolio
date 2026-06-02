@@ -1,235 +1,694 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kewal Deshpande | Video Editor & Frontend Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      background-color: #0a0a0a;
-      color: #e4e4e4;
-      line-height: 1.6;
-    }
+<title>Kewal Deshpande | Creative Portfolio</title>
 
-    header {
-      background: #111;
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 1px solid #222;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 4px solid #58a6ff;
-    }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 600;
-      color: #ffffff;
-    }
+<style>
 
-    header p {
-      font-size: 1.2rem;
-      color: #aaaaaa;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Space Grotesk',sans-serif;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      background: #1a1a1a;
-      padding: 15px;
-      border-bottom: 1px solid #222;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    nav a {
-      color: #58a6ff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+position:relative;
+}
 
-    nav a:hover {
-      color: #1f90ff;
-    }
+body::before{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#00d4ff;
+filter:blur(220px);
+opacity:.12;
+top:-150px;
+left:-150px;
+z-index:-1;
+}
 
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#7c3aed;
+filter:blur(220px);
+opacity:.12;
+bottom:-150px;
+right:-150px;
+z-index:-1;
+}
 
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: #ffffff;
-      border-left: 6px solid #58a6ff;
-      padding-left: 15px;
-    }
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:18px;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(15px);
+z-index:1000;
+}
 
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+position:relative;
+}
 
-    .portfolio-item {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #2a2a2a;
-      transition: transform 0.3s ease;
-    }
+nav a:hover{
+color:#00d4ff;
+}
 
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-    }
+nav a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+background:#00d4ff;
+left:0;
+bottom:-5px;
+transition:.3s;
+}
 
-    .portfolio-item video,
-    .portfolio-item img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
+nav a:hover::after{
+width:100%;
+}
 
-    .portfolio-item h3 {
-      color: #58a6ff;
-      margin-bottom: 10px;
-    }
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px;
+}
 
-    .skills-list li {
-      background: #1f1f1f;
-      padding: 10px 15px;
-      border-radius: 5px;
-      margin: 8px 0;
-      list-style: none;
-      border-left: 4px solid #58a6ff;
-    }
+.hero-content{
+max-width:900px;
+}
 
-    .contact a {
-      color: #58a6ff;
-      text-decoration: none;
-    }
+.profile-img{
+width:200px;
+height:200px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #00d4ff;
+box-shadow:0 0 50px rgba(0,212,255,.5);
+margin-bottom:25px;
+}
 
-    .contact a:hover {
-      text-decoration: underline;
-    }
+.hero h1{
+font-size:5rem;
+font-weight:700;
+line-height:1.1;
+margin-bottom:15px;
+background:linear-gradient(
+90deg,
+#00d4ff,
+#7c3aed
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-    .social-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      margin-top: 20px;
-    }
+.hero h2{
+font-size:1.6rem;
+font-weight:400;
+color:#00d4ff;
+margin-bottom:20px;
+}
 
-    .social-links a {
-      color: #e4e4e4;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
+.hero p{
+font-size:1.15rem;
+color:#bdbdbd;
+max-width:700px;
+margin:auto;
+line-height:1.8;
+margin-bottom:35px;
+}
 
-    .social-links a:hover {
-      color: #58a6ff;
-    }
+.hero-btn{
+display:inline-block;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+background:linear-gradient(
+135deg,
+#00d4ff,
+#7c3aed
+);
+color:white;
+transition:.4s;
+}
 
-    .about-section p {
-      margin-top: 15px;
-      font-size: 1rem;
-      color: #cccccc;
-    }
+.hero-btn:hover{
+transform:translateY(-5px);
+box-shadow:
+0 0 30px
+rgba(0,212,255,.4);
+}
 
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
-      color: #888;
-    }
-  </style>
+section{
+padding:100px 10%;
+max-width:1300px;
+margin:auto;
+}
+
+.section-title{
+font-size:3rem;
+margin-bottom:50px;
+text-align:center;
+position:relative;
+}
+
+.section-title::after{
+content:"";
+width:80px;
+height:4px;
+background:#00d4ff;
+position:absolute;
+bottom:-15px;
+left:50%;
+transform:translateX(-50%);
+border-radius:10px;
+}
+
+.about-box{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+padding:40px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.1);
+text-align:center;
+line-height:1.9;
+color:#d5d5d5;
+}
+
+.stats{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.stat-card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.1);
+text-align:center;
+transition:.4s;
+}
+
+.stat-card:hover{
+transform:translateY(-10px);
+box-shadow:
+0 0 30px
+rgba(0,212,255,.2);
+}
+
+.stat-card h3{
+font-size:3rem;
+color:#00d4ff;
+margin-bottom:10px;
+}
+
+.stat-card p{
+color:#c7c7c7;
+}
+
+.portfolio-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
+gap:30px;
+}
+
+.portfolio-item{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+padding:20px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.1);
+transition:.4s;
+}
+
+.portfolio-item:hover{
+transform:
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+0 0 35px
+rgba(0,212,255,.25);
+}
+
+.portfolio-item video,
+.portfolio-item img{
+width:100%;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.portfolio-item h3{
+color:#00d4ff;
+margin-bottom:10px;
+font-size:1.4rem;
+}
+
+.portfolio-item p{
+color:#cfcfcf;
+line-height:1.7;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.skill-card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.1);
+text-align:center;
+transition:.4s;
+cursor:pointer;
+}
+
+.skill-card:hover{
+transform:
+translateY(-8px);
+
+box-shadow:
+0 0 30px
+rgba(124,58,237,.25);
+}
+
+.skill-card i{
+font-size:2rem;
+margin-bottom:15px;
+color:#00d4ff;
+}
+
+.contact-box{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+padding:50px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.1);
+text-align:center;
+}
+
+.contact-box p{
+font-size:1.1rem;
+margin-bottom:20px;
+color:#d0d0d0;
+}
+
+.contact-box a{
+color:#00d4ff;
+text-decoration:none;
+}
+
+.social-links{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:25px;
+}
+
+.social-links a{
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
+font-size:1.5rem;
+color:white;
+transition:.4s;
+}
+
+.social-links a:hover{
+transform:
+translateY(-8px)
+scale(1.1);
+
+background:#00d4ff;
+color:#050505;
+
+box-shadow:
+0 0 30px
+rgba(0,212,255,.5);
+}
+
+footer{
+padding:40px 20px;
+text-align:center;
+color:#999;
+border-top:1px solid #222;
+margin-top:50px;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:3.5rem;
+}
+
+.hero h2{
+font-size:1.3rem;
+}
+
+.section-title{
+font-size:2.3rem;
+}
+
+.profile-img{
+width:170px;
+height:170px;
+}
+
+}
+
+@media(max-width:600px){
+
+nav{
+gap:20px;
+padding:15px 10px;
+font-size:.9rem;
+}
+
+.hero{
+padding-top:120px;
+}
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.hero h2{
+font-size:1.1rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.section-title{
+font-size:2rem;
+}
+
+section{
+padding:80px 25px;
+}
+
+.contact-box{
+padding:30px 20px;
+}
+
+.social-links{
+gap:15px;
+}
+
+.social-links a{
+width:50px;
+height:50px;
+font-size:1.2rem;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <header>
-    <img src="Kewal Deshpande.jpg" alt="Kewal Deshpande" class="profile-img">
-    <h1>Kewal Deshpande</h1>
-    <p>Video Editor | Motion Graphics Artist | Front End Web Developer</p>
-  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
 
-  <section id="about" class="about-section">
-    <h2 class="section-title">About Me</h2>
-    <p>Hello! I'm Kewal Deshpande, a passionate video editor currently pursuing my studies. I specialize in editing cinematic videos, short-form content, reels and dynamic motion graphics. I am skilled in tools like Adobe After Effects, Adobe Premiere Pro, CapCut, Alight Motion, Blender and more. I also have experience in frontend web development using HTML5 and CSS3. I'm always exploring new techniques and creative ways.</p>
-  </section>
+<header class="hero">
 
-  <section id="projects">
-    <h2 class="section-title">Previous Works</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <video src="Second Sample.mp4" controls></video>
-        <h3>News Channel Intro</h3>
-        <p>Edited promotional videos and highlight reels with creative transitions and sync effects.</p>
-      </div>
-      <div class="portfolio-item">
-        <video src="First Sample.mp4" controls></video>
-        <h3>Client 3D Reels</h3>
-        <p>Professional 3D reels for influencers, content creators, and short commercial edits.</p>
-      </div>
-    </div>
-  </section>
+<div class="hero-content">
 
-  <section id="skills">
-    <h2 class="section-title">Skills & Tools</h2>
-    <ul class="skills-list">
-      <li>Adobe After Effects</li>
-      <li>Adobe Premiere Pro</li>
-      <li>CapCut & Alight Motion</li>
-      <li>Blender for 3D & Motion Graphics</li>
-      <li>HTML5 & CSS3 (Responsive Design)</li>
-      <li>VFX and Motion Design</li>
-    </ul>
-  </section>
+<img src="Kewal Deshpande.jpg"
+alt="Kewal Deshpande"
+class="profile-img">
 
-  <section id="contact" class="contact">
-    <h2 class="section-title">Contact Me</h2>
-    <p>Email: <a href="mailto:kewaldeshpande27@gmail.com">kewaldeshpande27@gmail.com</a></p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/kewal_deshpande?igsh=MWE3cDlnM3dnYzht" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/kewal-deshpande-6a9128292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="mailto:kewaaldeshpande27@gmail.com" target="_blank" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </section>
+<h1>Kewal Deshpande</h1>
 
-  <footer>
-    &copy; 2025 Kewal Deshpande. All rights reserved.
-  </footer>
+<h2>
+Video Editor • Motion Graphics Artist • Frontend Developer
+</h2>
+
+<p>
+Creating cinematic edits, motion graphics,
+3D visuals and modern digital experiences.
+Helping brands, creators and businesses
+stand out through creative storytelling.
+</p>
+
+<a href="#projects" class="hero-btn">
+View My Work
+</a>
+
+</div>
+
+</header>
+
+<section id="about">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<div class="about-box">
+
+<p>
+
+Hello! I'm Kewal Deshpande,
+a passionate Video Editor,
+Motion Graphics Artist and Frontend Developer.
+
+I specialize in cinematic editing,
+reels, shorts, motion graphics,
+VFX, 3D visuals and responsive web design.
+
+I work with tools such as
+Adobe After Effects,
+Adobe Premiere Pro,
+Blender, CapCut,
+Alight Motion and modern web technologies.
+
+</p>
+
+</div>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>50+</h3>
+<p>Projects Completed</p>
+</div>
+
+<div class="stat-card">
+<h3>3+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat-card">
+<h3>100K+</h3>
+<p>Views Generated</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">
+Featured Projects
+</h2>
+
+<div class="portfolio-grid">
+
+<div class="portfolio-item">
+
+<video
+src="Second Sample.mp4"
+controls>
+</video>
+
+<h3>
+News Channel Intro
+</h3>
+
+<p>
+Professional intro animation,
+motion graphics and visual branding.
+</p>
+
+</div>
+
+<div class="portfolio-item">
+
+<video
+src="First Sample.mp4"
+controls>
+</video>
+
+<h3>
+Client 3D Reels
+</h3>
+
+<p>
+High quality cinematic reels,
+3D graphics and promotional content.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">
+Skills & Tools
+</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<i class="fas fa-film"></i>
+<h3>Adobe Premiere Pro</h3>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-magic"></i>
+<h3>After Effects</h3>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-cube"></i>
+<h3>Blender 3D</h3>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-code"></i>
+<h3>HTML5 & CSS3</h3>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-bolt"></i>
+<h3>Motion Graphics</h3>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-video"></i>
+<h3>Video Editing</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">
+Contact Me
+</h2>
+
+<div class="contact-box">
+
+<p>
+
+Email:
+
+<a href="mailto:kewaldeshpande27@gmail.com">
+kewaldeshpande27@gmail.com
+</a>
+
+</p>
+
+<div class="social-links">
+
+<a href="https://www.instagram.com/kewal_deshpande"
+target="_blank">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+<a href="https://www.linkedin.com/in/kewal-deshpande-6a9128292"
+target="_blank">
+
+<i class="fab fa-linkedin"></i>
+
+</a>
+
+<a href="mailto:kewaldeshpande27@gmail.com">
+
+<i class="fas fa-envelope"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Kewal Deshpande
+All Rights Reserved
+</p>
+
+</footer>
+
 </body>
 </html>
